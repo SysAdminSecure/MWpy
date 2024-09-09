@@ -1,5 +1,5 @@
 from complemets import color
-VERIOSN = "V1.0"
+VERIOSN = "V1.0.1"
 
 
 

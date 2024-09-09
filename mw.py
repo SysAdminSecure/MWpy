@@ -1,4 +1,4 @@
-## MalWare.PY
+## MalWare.PYdd
 import os  
 from complemets import  Banner, color
 from complemets.Script import ramsomware,clear_screen
@@ -18,7 +18,6 @@ def exit_mwpy():
     global run_mwpy
     run_mwpy = False
     print("\nExiting...\n")
-
     
 def main():
     ##display
