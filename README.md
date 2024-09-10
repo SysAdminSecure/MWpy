@@ -18,8 +18,8 @@
 
 1. Clone the repository to your local machine:
    ````bash
-   git clone https://github.com/SysAdminSecure/malwarepy.git
-   cd malwarepy
+   git clone https://github.com/SysAdminSecure/MWpy.git
+   cd MWpy
    python3 mw.py
 ## Authors
 
