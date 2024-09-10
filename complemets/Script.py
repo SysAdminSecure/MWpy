@@ -25,16 +25,39 @@ For any questions, see: https://github.com/SysAdminSecure.
 
 import os
 import random
+import platform
 from complemets import color, Banner
+##global
+SystemOperating = ""
+clear = "clear"
 
 
+##
+def carpeta():
+    ##Folder Validation and Creation
+  ##  if os.path.exists("Malwares"):
+   ##     print('la carpeta ya ha sido creada')
+   ## else:
+    ##    os.mkdir("Malwares")
+    try:
+        os.mkdir("Malwares")
+    except:
+      pass
+  
+    global SystemOperating 
+    SystemOperating = platform.system()
+    print(SystemOperating)
+  
+    if SystemOperating =="Windows":
+        global clear
+        clear = "cls"
+    
 
 def display_menu():
     print(random.choice(Banner.list_baner))
 
 def clear_screen():
     ##clear screen for windows
-    clear = "cls"
     os.system(clear)
     display_menu()
 

